@@ -30,5 +30,6 @@ if __name__ == '__main__':
                 print_report(f_size, status_code)
         print_report(f_size, status_code)
     except KeyboardInterrupt:
+        pass
+    finally:
         print_report(f_size, status_code)
-        raise
