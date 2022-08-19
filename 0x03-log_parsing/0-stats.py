@@ -7,7 +7,7 @@ def print_report(size, status):
     """ Print the statistics """
     print("File size: {}".format(size))
     for code, mnt in status.items():
-        if mnt > 0:
+        if mnt:
             print("{}: {}".format(code, mnt))
 
 
@@ -22,7 +22,7 @@ if __name__ == '__main__':
         for line in sys.stdin:
             s_line = line.split()
             l_reads += 1
-            if len(s_line) > 2:
+            if len(s_line) == 9:
                 if s_line[-2] in status_code:
                     status_code[s_line[-2]] += 1
                 f_size += int(s_line[-1])
