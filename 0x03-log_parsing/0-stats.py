@@ -28,6 +28,7 @@ if __name__ == '__main__':
                 f_size += int(s_line[-1])
             if l_reads % 10 == 0:
                 print_report(f_size, status_code)
+        print_report(f_size, status_code)
     except KeyboardInterrupt:
         print_report(f_size, status_code)
         raise
