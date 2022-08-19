@@ -7,7 +7,7 @@ def print_report(size, status):
     """ Print the statistics """
     print("File size: {}".format(size))
     for code, mnt in status.items():
-        if mnt:
+        if mnt > 0:
             print("{}: {}".format(code, mnt))
 
 
@@ -30,6 +30,5 @@ if __name__ == '__main__':
                 print_report(f_size, status_code)
         print_report(f_size, status_code)
     except KeyboardInterrupt:
-        pass
-    finally:
         print_report(f_size, status_code)
+        raise
