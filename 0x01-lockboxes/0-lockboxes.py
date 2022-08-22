@@ -2,17 +2,6 @@
 """ Module Lockboxes """
 
 
-from operator import truediv
-
-
-def search(boxes, key):
-    """ Search a key in all boxes"""
-    for k in boxes[key]:
-        if k < len(boxes):
-            return True
-    return False
-
-
 def canUnlockAll(boxes):
     """
         Method that determines if all
@@ -27,12 +16,12 @@ def canUnlockAll(boxes):
         return False
     if len(boxes) == 1:
         return True
-    unloked = ['U']
-    print(len(boxes))
-    for box in range(1, len(boxes)):
-        if search(boxes, box) or box == 0:
-            unloked.append('U')
-    print(len(unloked))
-    if len(unloked) == len(boxes):
+    unlocked = [0]
+    for i in unlocked:
+        for k in boxes[i]:
+            if not k in unlocked and k < len(boxes):
+                    unlocked.append(k)
+    print(unlocked)
+    if len(unlocked) == len(boxes):
         return True
     return False
