@@ -6,7 +6,7 @@ import sys
 def print_report(size, status):
     """ Print the statistics """
     print("File size: {}".format(size))
-    for code, mnt in status.items():
+    for code, mnt in sorted(status.items()):
         if mnt > 0:
             print("{}: {}".format(code, mnt))
 
