@@ -7,10 +7,9 @@ request(url, async function (err, resp, body) {
     if (err) {
         console.log(err);
     }
-    const characters = JSON.parse(body).characters;
-    characters.array.forEach(element => {
+    for (const character of JSON.parse(body).characters) {
         await new Promise((resolve, reject) => {
-            request(element, (err, resp, body) => {
+            request(character, (err, resp, body) => {
                 if (err) {
                     reject(err);
                 }
@@ -18,5 +17,5 @@ request(url, async function (err, resp, body) {
                 resolve();
             });
         });
-    });
+    }
 });
